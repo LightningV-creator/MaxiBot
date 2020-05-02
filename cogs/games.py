@@ -3,7 +3,7 @@ from discord.ext import commands
 import random
 
 
-class Gamecog(commands.Cog):
+class Games(commands.Cog):
 
     def __init__(self, client):
         self.client = client
@@ -11,12 +11,7 @@ class Gamecog(commands.Cog):
     
     @commands.Cog.listener()  
     async def on_ready(self):
-        print('gamecog is ready')   
-
-    @commands.command()
-    async def pingtwo(self, ctx):
-        await ctx.send('works?')     
-
+        print('Games cog is ready')   
 
     @commands.command()
     async def rps(self, ctx, choice):
@@ -24,13 +19,13 @@ class Gamecog(commands.Cog):
         mychoice = random.choice(choices)
 
         winning = [] 
-        winning.append('I have ' + mychoice + ', Better Luck Next Time!')
-        winning.append(mychoice + ' I won! Try Aagain!')
-        winning.append('I won! I got ' + mychoice + 'R.I.P')
+        winning.append('I have ' + mychoice + '! Better Luck Next Time!')
+        winning.append(mychoice + '! I won! Try Aagain!')
+        winning.append('I won! I got ' + mychoice + 'REST. IN. PIECES.')
    
         losing = []
         losing.append('Well.. I have ' + mychoice +' You win')
-        losing.append('bruh I got ' + mychoice + ' smh')
+        losing.append('Bruh I got ' + mychoice + ' smh')
         losing.append(mychoice + ' I let you win on purpose this time')
  
         drawEmojis = [ ':thinking:', ':sweat_smile:', ':innocent:' ]
@@ -38,7 +33,7 @@ class Gamecog(commands.Cog):
         losingEmojis = [ ':cry:', ':crying_cat_face:', ':knife:' ]
     
         if (choice not in choices):
-            await ctx.send('Check your spelling(Rock, Paper, or Scissors)')
+            await ctx.send('Check your spelling! You can only use `rock`, `paper`, or `scissors`')
         else:
             if (mychoice == choice):
                 await ctx.send("Lucky you, I have " + choice + " it is a draw!" + " " + random.choice(drawEmojis))
@@ -57,4 +52,4 @@ class Gamecog(commands.Cog):
 
 
 def setup(client):
-   client.add_cog(Gamecog(client))        
+   client.add_cog(Games(client))        

@@ -6,7 +6,7 @@ import random
 
 
 client = commands.Bot(command_prefix = '.')
-status = cycle(['Chillin', 'Walking', 'Running', 'Coding', 'just sitting', 'chillin', 'in the server', 'Cat-Fishing', 'Ascending'])
+status = cycle(['Chillin', 'Walking', 'Running', 'Coding', 'just sitting', 'chillin', 'in the server', 'Cat-Fishing', 'Ascending', 'Purring'])
 
 @client.event
 async def on_ready():

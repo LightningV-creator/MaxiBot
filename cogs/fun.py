@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import random
 
-class Cogone(commands.Cog):
+class Fun(commands.Cog):
 
     def __init__(self, client):
         self.client = client
@@ -80,4 +80,4 @@ class Cogone(commands.Cog):
         await ctx.send(f'Fact: {random.choice(responses)}')
 
 def setup(client):
-   client.add_cog(Cogone(client))
+   client.add_cog(Fun(client))
